@@ -10,7 +10,7 @@
     var cookie = req.headers['cookie'];
     res.end(cookie);
 ```    
-## cookie加密与不加密
+## cookie加密与不加密 他们存放的位置不一样
 ```
 引入require('cookie-parse')('密钥')//第一次
 app.get('/visit',function(req,res){
