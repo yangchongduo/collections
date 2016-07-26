@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>zhuxiaohong</h1>
+<button id="btn">发送socket请求</button>
+</body>
+</html>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var btn=document.getElementById('btn');
+    btn.onclick=function() {
+        socket = io.connect('http://localhost:8080')
+        socket.on('hello',function(data){
+            alert(data)
+            this.emit('hellotoo',"小红")
+        })
+        socket.on('a',function(data){
+            alert(data)
+        })
+    }
+
+</script>
